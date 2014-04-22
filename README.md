@@ -15,6 +15,35 @@ val thread1 = Resque.worker_try
 val thread2 = Resque.worker_try1
 thread1.start()
 thread2.start()
+```
+
+## Worker class
+
+```scala
+case class TestAction1(i:String,d:String) extends Runnable {
+
+   override def run() {
+      println("Job ran at=")
+   }
+}
+// Same stuff in Java
+
+public class TestAction implements Runnable {
+    final String arg1;
+    final String arg2;
+ 
+    public TestAction(String arg1, String arg2) {
+        this.arg1 = arg1;
+        this.arg2 = arg2;
+    }
+ 
+    @Override
+    public void run() {
+        System.out.println("Job ran at=");
+    }
+}
+
+```
 
 
 
